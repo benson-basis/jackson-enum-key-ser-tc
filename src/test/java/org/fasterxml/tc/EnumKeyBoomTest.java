@@ -31,7 +31,7 @@ public class EnumKeyBoomTest {
     @Test
     public void boom() throws Exception {
         ObjectMapper mapper = EnumModule.setupObjectMapper(new ObjectMapper());
-        Map<TestEnum, String> map = Maps.newEnumMap(TestEnum.class);
+        Map<TestEnum, String> map = Maps.newHashMap();
         map.put(TestEnum.value1, "dumpling");
         Map<TestEnum, String> deser = mapper.readValue("{\"comment1\": \"dumpling\"}", new TypeReference<Map<TestEnum, String>>() {
         });
